@@ -1,0 +1,14 @@
+services:
+  twitter-clone:
+    container_name: twitter-clone
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./twitter-clone:/app
+      - ./twitter-clone/node_modules:/app/node_modules
+    command: sh -c "yarn start"
+    ports:
+      - "3000:3000"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
