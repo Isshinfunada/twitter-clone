@@ -3,7 +3,7 @@ import React from 'react'
 
 function SidebarOption({ text, Icon }) {
   return (
-    <div className='SidebarOption'>
+    <div className='sidebarOption'>
         <Icon />
         <h2>{text}</h2>
     </div>
