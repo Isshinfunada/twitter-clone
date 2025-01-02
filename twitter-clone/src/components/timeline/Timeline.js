@@ -3,7 +3,7 @@ import "./Timeline.css";
 import TweetBox from "./TweetBox";
 import Post from "./Post";
 import db from "../../firebase";
-import { collection, getDocs } from "firebase/firestore"; 
+import { collection, onSnapshot, orderBy, query } from "firebase/firestore"; 
 
 function Timeline() {
     const [posts, setPosts] = useState([]);
@@ -11,10 +11,11 @@ function Timeline() {
     
     useEffect(() => {
         const postData = collection(db, "posts");
-        getDocs(postData).then((querySnapshot) => {
+        const q = query(postData, orderBy("timestamp", "desc"));
+        
+        onSnapshot(q, (querySnapshot) => {
             setPosts(querySnapshot.docs.map((doc => doc.data())))
         });
-        console.log("aaa");
     },[]);
 
   return (
