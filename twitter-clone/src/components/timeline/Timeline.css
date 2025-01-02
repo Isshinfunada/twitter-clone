@@ -1,6 +1,12 @@
 .timeline {
     flex: 0.45;
-    border: 1px solid var(--twitter-background);   
+    border: 1px solid var(--twitter-background);  
+    overflow-y: scroll;
+}
+
+/* これはchromeでしか適用されません */
+.timeline::-webkit-scrollbar {
+    display: none;
 }
 
 .timeline_header {
