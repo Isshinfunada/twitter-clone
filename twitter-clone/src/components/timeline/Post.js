@@ -7,26 +7,27 @@ import PublishOutlinedIcon from '@mui/icons-material/PublishOutlined';
 import React from "react";
 import "./Post.css";
 
-function Post() {
+function Post({ displayName, username, verified, text, avatar, image }) {
   return <div className="post">
     <div className="post_avatar">
-        <Avatar />
+        <Avatar src={avatar}/>
     </div>
     <div className="post_body">
         <div className="post_header">
             <div className="post_headerText">
-                <h3>テストのユーザネーム
-                    <VerifiedUserIcon className="post_badge" />
-                </h3>
+                <h3> 
+                    {displayName}
                     <span className="post_headerSpecial">
-                        @ユーザネーム
+                        {verified && <VerifiedUserIcon className="post_badge"/>}
+                        @{username}
                     </span>
+                </h3>
             </div>
             <div className="post_headerDescription">
-                <p>Reactなう</p>
+                <p>{text}</p>
             </div>
         </div>
-        <img src="https://picsum.photos/800" />
+        <img src={image} />
         <div className="post_footer">
             <ChatBubbleOutlineIcon fontSize="small" />
             <RepeatIcon fontSize="small" />

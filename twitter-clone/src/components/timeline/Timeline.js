@@ -10,7 +10,14 @@ function Timeline() {
         <h2>ホーム</h2>
     </div>
     <TweetBox />
-    <Post />
+    <Post 
+        displayName="テストのユーザネーム"
+        username="ユーザネーム"
+        verified={true}
+        text="Reactなう"
+        avatar="https://picsum.photos/200"
+        image="https://picsum.photos/800"
+    />
   </div>
 
   );
