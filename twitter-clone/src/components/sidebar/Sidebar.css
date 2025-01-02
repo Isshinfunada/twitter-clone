@@ -1,5 +1,5 @@
 .sidebar {
-    border-right-width: 1px solid var(--twitter-background) ;
+    border-right: 1px solid var(--twitter-background) ;
     /* 表示するコンテンツの20％を占めるflex設定 */
     flex: 0.2; 
     min-width: 250px;
